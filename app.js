@@ -67,9 +67,9 @@
   }
 
   function deleteTask(id) {
-    tasks = tasks.filter((t) => t.id !== id);
-    save();
-    render();
+    // Remove just the one row instead of re-rendering the whole list.
+    const row = list.querySelector('[data-id="' + id + '"]');
+    if (row) row.remove();
   }
 
   function clearCompleted() {
