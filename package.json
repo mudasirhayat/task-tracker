@@ -4,7 +4,13 @@
   "description": "A tiny vanilla-JS to-do app used to evaluate TestDriver's automated pull request review.",
   "private": true,
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "dotenv": "^18.0.10",
+    "testdriverai": "^7.11.281",
+    "vitest": "^5.1.0"
   },
   "license": "MIT"
 }
