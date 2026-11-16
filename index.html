@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Task Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app">
+    <header class="app-header">
+      <h1>Task Tracker</h1>
+      <p class="tagline">A tiny to-do app used to evaluate automated PR review.</p>
+    </header>
+
+    <form id="add-form" class="add-form" autocomplete="off">
+      <label for="task-input" class="visually-hidden">New task</label>
+      <input id="task-input" name="task" type="text" placeholder="What needs doing?" maxlength="120" required>
+      <button type="submit" id="add-button" class="btn btn-primary">Add task</button>
+    </form>
+
+    <p id="error" class="error" role="alert" hidden></p>
+
+    <nav class="filters" aria-label="Filter tasks">
+      <button type="button" class="filter is-active" data-filter="all">All</button>
+      <button type="button" class="filter" data-filter="active">Active</button>
+      <button type="button" class="filter" data-filter="done">Done</button>
+    </nav>
+
+    <ul id="task-list" class="task-list" aria-live="polite"></ul>
+
+    <p id="empty-state" class="empty-state">No tasks yet. Add your first one above.</p>
+
+    <footer class="app-footer">
+      <span id="count" class="count">0 tasks left</span>
+      <button type="button" id="clear-done" class="btn btn-link">Clear completed</button>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
